@@ -3,8 +3,14 @@ function start(){
 
   void setup(){
   size(600, 400, P2D;
-  ortho();   
-  
+  ortho(); 
+    
+  }
+    
+    
+  void draw(){
+  background(0);
+    
   }
 
 
