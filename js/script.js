@@ -13,7 +13,14 @@ function start(){
     
   }
 
-
+ 
+  bool run = True; 
+  while(run){
+  
+    draw();
+    
+  }
+  
 
 
 
