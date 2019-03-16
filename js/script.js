@@ -1,28 +1,9 @@
 
-function start(){
-
-  void setup(){
-  size(600, 400);
-
-    
-  }
-    
-    
-  void draw(){
-  background(0);
-    
-  }
-
- 
-  bool run = True; 
-  while(run){
-  
-    draw();
-    
-  }
-  
-
-
-
-
+window.onload=function(){
+  c=document.getElementById('gc');
+  cc = c.getContext('2d');
+  setInterval(update,1000/30);
 }
+
+cc.fillStyle='black';
+cc.fillRect(0,0,c.width,c.height);
