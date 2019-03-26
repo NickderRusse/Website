@@ -10,7 +10,7 @@ window.onload = function() {
 	
 	
 	var cr = [];
-	for(let i = 0; i<10000; i++){
+	for(let i = 0; i<100000; i++){
 		cr[i] = new Circle(window.innerWidth / 2,window.innerHeight / 2);
 		
 	} 
