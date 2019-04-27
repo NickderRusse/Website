@@ -36,6 +36,8 @@ window.onload = function() {
 		c.clearRect(0, 0, width_, height_);	
 		if(speed > 0){
 			speed = speed - 0.0001;
+		}else{
+		speed = 0;
 		}
 		angle += speed;
 		
