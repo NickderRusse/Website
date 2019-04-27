@@ -29,8 +29,8 @@ window.onload = function() {
 			speed += 0.01;
 		})	
 		
-	var speed = 0;
-	var angle = 0;
+	var speed = 0.01;
+	var angle = 1;
 	var render = function(){
 		window.requestAnimationFrame(render);
 		c.clearRect(0, 0, width_, height_);	
