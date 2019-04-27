@@ -14,7 +14,7 @@ window.onload = function() {
 	}
 	
 	
-	window.addEventListener('mousedown', function(e) {	
+	window.addEventListener('mousedown', function() {	
 			for(var i = 0; i < objects.length; i++)
 				objects[i].acc();
 		})
