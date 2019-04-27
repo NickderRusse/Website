@@ -37,7 +37,7 @@ window.onload = function() {
 		if(speed > 0){
 			speed = speed - 0.0001;
 		}else{
-		speed = 0;
+			speed = 0;
 		}
 		angle += speed;
 		
