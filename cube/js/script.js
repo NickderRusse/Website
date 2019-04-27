@@ -29,7 +29,7 @@ window.onload = function() {
 			speed += 0.01;
 		})	
 		
-	var speed = 0.05;
+	var speed = 0.02;
 	var angle = 1;
 	var render = function(){
 		window.requestAnimationFrame(render);
