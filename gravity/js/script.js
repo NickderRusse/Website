@@ -119,7 +119,7 @@ class ball {
 
 
 function collison(objects, i){
-	for(let j = 0; j < objects.length; j++){
+	for(let j = i+1; j < objects.length; j++){
 			if((Math.pow(objects[j].loc[0] - objects[i].loc[0],2) + Math.pow(objects[j].loc[1] - objects[i].loc[1],2)) < Math.pow(objects[0].ballwidth * 2, 2) && (i != j)){
 
 				
