@@ -350,7 +350,6 @@ function connect(rays, c, op){
 		}
 		
 		
-		
 		if(rays[i].dir[1] == 0 && rays[i].dir[0] > 0 && angle == 0){
 			angle = 180;
 		}
