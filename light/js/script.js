@@ -90,7 +90,7 @@ window.onload = function() {
 		
 	document.querySelector('canvas').addEventListener('touchstart', function(f) {	
 			for(let i = 0; i < rays.length; i++){
-				rays[i].change(f.x, f.y)
+				rays[i].change(f.pageX, f.pageY)
 			}		
 			move = false;
 		})	
