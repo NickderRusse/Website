@@ -88,9 +88,9 @@ window.onload = function() {
 			move = false;
 		})
 		
-	window.addEventListener('touchmove', function(e) {	
+	window.addEventListener('touchstart', function(f) {	
 			for(let i = 0; i < rays.length; i++){
-				rays[i].change(e.x, e.y)
+				rays[i].change(f.x, f.y)
 			}		
 			move = false;
 		})	
