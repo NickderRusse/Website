@@ -95,7 +95,12 @@ window.onload = function() {
 			move = false;
 		})	
 		
-	
+	window.addEventListener('touchmove', function(g) {	
+			for(let i = 0; i < rays.length; i++){
+				rays[i].change(g.pageX, g.pageY)
+			}		
+			move = false;
+	}) 
 	
 	
 
