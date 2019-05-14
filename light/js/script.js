@@ -88,7 +88,7 @@ window.onload = function() {
 			move = false;
 		})
 		
-	window.addEventListener('touchstart', function(f) {	
+	window.addEventListener('touchstart', ) {	
 			for(let i = 0; i < rays.length; i++){
 				rays[i].change(f.x, f.y)
 			}		
