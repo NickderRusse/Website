@@ -79,7 +79,7 @@ window.onload = function() {
 	
 	
 	
-	
+	var mangle = 0;
 	var move = true;
 	window.addEventListener('mousemove', function(e) {	
 			for(let i = 0; i < rays.length; i++){
@@ -95,13 +95,13 @@ window.onload = function() {
 			move = false;
 		})	
 		
+	
 	window.addEventListener('touchmove', function(g) {	
 			for(let i = 0; i < rays.length; i++){
 				rays[i].change(g.pageX, g.pageY)
 			}		
 			move = false;
 	}) 
-	
 	
 
 	
@@ -110,7 +110,7 @@ window.onload = function() {
 	
 	
 	
-	var up = false;
+	var az = Date.now();
 	var render = function(){
 		window.requestAnimationFrame(render);
 		c.beginPath();
@@ -127,11 +127,6 @@ window.onload = function() {
 		
 	
 		connect(rays, c, true);	
-		
-		for(var p=0; p < offrays.length; p++){
-			connect(offrays[p], c, false);
-		}
-		
 		for(let i = 0; i < strokes.length; i++){		
 			for(let j=0; j<3; j++){	
 				rays[3*i+j].set(strokes, i, j);
@@ -146,9 +141,10 @@ window.onload = function() {
 				for(let j=0; j<3; j++){	
 					offrays[p][3*i+j].set(strokes, i, j);
 					offrays[p][3*i+j].intersection(strokes);
-					offrays[p][3*i+j].draw(c);
+					//offrays[p][3*i+j].draw(c);
 				}		
 			}
+			connect(offrays[p], c, false);
 		}	
 		
 		for(let i=0; i < rays.length; i++){
@@ -180,21 +176,30 @@ window.onload = function() {
 		
 		
 		
-		if(move){		
-			if((rays[0].loc[1]<length_) && (up == true)){
-				up=false;
+		if(move){	
+			var nz = Date.now();
+		
+		
+			if(nz-az > 0){
+				az = nz;
+				mangle += 0.01;		
 			}
-			if(rays[0].loc[1]>height_-length_ && up == false){
-				up=true;
-			}		
+			
+			
+			var x = Math.sin(mangle-Math.PI/2)* (length_*3.5);
+			var y = Math.sqrt(Math.pow(length_*3.5, 2) - x*x);
+			
+			if(mangle > Math.PI*2){mangle=0};
+			if(mangle > Math.PI){y=y*-1};
+				
 			for(var i = 0; i < rays.length; i++){
-				if(up){
-					rays[i].loc[1] -= height_ / 700;
-				}else{
-					rays[i].loc[1] += height_ / 700;
-				}	
-			}	
+				rays[i].loc[0] = mid[0]-x;
+				rays[i].loc[1] = mid[1]-y;			
+			}			
+			
 		}
+		
+		
 	}	
 	render();
 }
@@ -267,7 +272,6 @@ class light {
 	
 	draw(c){
 		c.beginPath();
-		c.lineWidth = 0.1;
         c.fillStyle = "#2202D7";
         c.arc(this.loc[0], this.loc[1], 5, 0, 2 * Math.PI);
 		c.arc(this.loce[0], this.loce[1], 5, 0, 2 * Math.PI);
@@ -338,7 +342,6 @@ class light {
 
 
 function drawlines(strokes, c) {
-	c.lineWidth = 1;
 	for(let i = 0; i < strokes.length; i++){
 		let x1 = strokes[i][0];
 		let y1 = strokes[i][1];
