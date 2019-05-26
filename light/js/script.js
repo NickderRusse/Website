@@ -189,8 +189,8 @@ window.onload = function() {
 			var x = Math.sin(mangle-Math.PI/2)* (length_*3.5);
 			var y = Math.sqrt(Math.pow(length_*3.5, 2) - x*x);
 			
-			if(mangle > Math.PI*2){mangle=0};
-			if(mangle > Math.PI){y=y*-1};
+			if(mangle >= Math.PI*2){mangle=0};
+			if(mangle >= Math.PI){y=y*-1};
 				
 			for(var i = 0; i < rays.length; i++){
 				rays[i].loc[0] = mid[0]-x;
