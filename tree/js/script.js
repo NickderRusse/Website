@@ -14,7 +14,7 @@ window.onload = function() {
 	
 	
 	function line(p1, p2, p3, p4, l, i){	
-		if(i > 2000){
+		if(i > 2046){
 			c.strokeStyle = "#840101";
 		}else{
 			c.strokeStyle = "#000000";
