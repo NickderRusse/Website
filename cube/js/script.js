@@ -1,9 +1,9 @@
 window.onload = function() {	
 	var canvas = document.querySelector('canvas');
 	canvas.width =  window.innerWidth;
-	canvas.height = window.innerHeight - 5; 	
+	canvas.height = window.innerHeight; 	
 	var width_ = window.innerWidth;
-	var height_ = window.innerHeight - 5; 
+	var height_ = window.innerHeight; 
 	var c = canvas.getContext('2d');
 	
 	
