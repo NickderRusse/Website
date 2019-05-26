@@ -126,14 +126,7 @@ window.onload = function() {
 
 		
 	
-		connect(rays, c, true);	
-		for(let i = 0; i < strokes.length; i++){		
-			for(let j=0; j<3; j++){	
-				rays[3*i+j].set(strokes, i, j);
-				rays[3*i+j].intersection(strokes);
-				rays[3*i+j].draw(c);
-			}		
-		}
+		
 			
 			
 		for(var p=0; p < offrays.length; p++){
@@ -145,7 +138,16 @@ window.onload = function() {
 				}		
 			}
 			connect(offrays[p], c, false);
-		}	
+		}
+		
+		connect(rays, c, true);	
+		for(let i = 0; i < strokes.length; i++){		
+			for(let j=0; j<3; j++){	
+				rays[3*i+j].set(strokes, i, j);
+				rays[3*i+j].intersection(strokes);
+				rays[3*i+j].draw(c);
+			}		
+		}
 		
 		for(let i=0; i < rays.length; i++){
 			offrays[0][i].loc[0] = rays[0].loc[0] + 6; 
