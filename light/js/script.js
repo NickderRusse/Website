@@ -1,4 +1,10 @@
-window.onload = function() {	
+window.onload = function() {
+	targetElement.ontouchend = (j) => {
+   		j.preventDefault();
+	};
+	
+	
+	
 	var canvas = document.querySelector('canvas');
 	canvas.width =  window.innerWidth;
 	canvas.height = window.innerHeight - 5; 	
