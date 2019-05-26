@@ -1,5 +1,5 @@
 window.onload = function() {
-	targetElement.ontouchend = (j) => {
+	window.ontouchend = (j) => {
    		j.preventDefault();
 	};
 	
