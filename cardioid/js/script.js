@@ -32,18 +32,18 @@ window.onload = function() {
 	
 	ani = true;
 	window.addEventListener('mousemove', function(f) {	
-			factor = f.x / width_ * 20 + 1;
+			factor = f.x / width_ * 10 + 1;
 			ani = false;
 		})
 		
 	window.addEventListener('touchstart', function(f) {			
-			factor = f.pageX / width_ * 20 + 1;			
+			factor = f.pageX / width_ * 10 + 1;			
 			ani = false;
 		})	
 		
 	
 	window.addEventListener('touchmove', function(f) {			
-			factor = f.pageX / width_ * 20 + 1;		
+			factor = f.pageX / width_ * 10 + 1;		
 			ani = false;
 	}) 
 		
@@ -58,7 +58,7 @@ window.onload = function() {
 
 		if(nz-az > 10 && ani){
 			az = nz;
-			factor += 0.05;
+			factor += 0.01;
 		}
 
 		window.requestAnimationFrame(render);
